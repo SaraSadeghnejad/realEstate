@@ -3,9 +3,9 @@ import { Link } from 'react-router'
 
 const SignUp = () => {
   return (
-    <div className='mt-3 mx-auto max-w-lg'>
-      <h1 className='text-center text-3xl font-bold'>Sign Up</h1>
-      <form className='flex flex-col gap-3 mx-auto mt-4'>
+    <div className='p-3 mx-auto max-w-lg'>
+      <h1 className='text-center text-3xl font-bold my-7'>Sign Up</h1>
+      <form className='flex flex-col gap-3 mx-auto '>
         <input type='text' className='border rounded-lg p-3' placeholder='Username' id='Username'/>
         <input type='email' className='border rounded-lg p-3' placeholder='Email' id='email'/>
         <input type='password'className='border rounded-lg p-3' placeholder='Password' id='Password'/>
