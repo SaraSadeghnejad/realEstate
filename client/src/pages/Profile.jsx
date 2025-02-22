@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
+import { Navigate, Outlet } from "react-router";
 
 const Profile = () => {
-  return (
-    <div>Profile</div>
-  )
-}
+  const { currentUser } = useSelector((state) => state.user);
+  return currentUser ? <Outlet /> : <Navigate to="/sign-in" />;
+};
 
-export default Profile
+export default Profile;
