@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "../api/routes/user.route.js";
 import authRouter from "../api/routes/auth.route.js";
+import cookieParser from "cookie-parser";
 import { STATUS_CODES } from "http";
 import { error } from "console";
 dotenv.config();
@@ -22,7 +23,7 @@ app.listen("3000", () => {
 });
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
-
+app.use(cookieParser())
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal server error";
