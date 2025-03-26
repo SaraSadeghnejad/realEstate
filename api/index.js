@@ -17,13 +17,13 @@ const db = mongoose
   .catch((err) => {
     console.log(err);
   });
-
+  app.use(cookieParser())
 app.listen("3000", () => {
   console.log("listening on port 3000");
 });
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
-app.use(cookieParser())
+
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal server error";
