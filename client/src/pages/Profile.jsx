@@ -19,6 +19,7 @@ import {
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { app } from "../firebase";
+import { Link } from "react-router";
 const Profile = () => {
   const fileRef = useRef(null);
   const { currentUser, loading, error } = useSelector((state) => state.user);
@@ -213,6 +214,7 @@ const Profile = () => {
         <button className="bg-slate-500 disabled:opacity-80 text-white uppercase  p-3 rounded-lg hover:opacity-95">
           update
         </button>
+        <Link className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95' to='/create-listing'>Create Listing</Link>
       </form>
       <div className="flex justify-between mt-3">
         <span className="text-red-600 cursor-pointer" onClick={handleDelete}>Delete Account</span>
