@@ -4,20 +4,22 @@ import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
-import AboutUs from './pages/AboutUs'
+import About from './pages/AboutUs'
 import Header from './components/Header'
 import PrivateRoute from './pages/PrivateRoute'
 import CreateListing from './pages/CreateListing'
 import UpdateListing from './pages/UpdateListing'
 import Listing from './pages/Listing'
+import Search from './pages/Search'
 const App = () => {
   return (
 <BrowserRouter>
 <Header/>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path='about-us' element={<AboutUs/>}/>
+      <Route path='about' element={<About/>}/>
       <Route path='listing/:listingId' element={<Listing/>}/>
+      <Route path='/search' element={<Search/>}/>
       <Route path='sign-up' element={<SignUp/>}/>
       <Route path='sign-in' element={<SignIn/>}/>
       <Route element={<PrivateRoute/>}>
